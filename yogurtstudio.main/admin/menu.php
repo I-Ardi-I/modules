@@ -1,4 +1,4 @@
-<?
+<?php
 
 use Bitrix\Main\Localization\Loc,
 	Bitrix\Main\Loader;
@@ -49,7 +49,7 @@ function OnBuildGlobalMenuHandlerMax(&$arGlobalMenu, &$arModuleMenu)
 					'text'  => Loc::getMessage('YS_SUB_MENU_THREE'),
 					'title' => Loc::getMessage('YS_SUB_MENU_THREE'),
 					'sort'  => 1000,
-					'url'   => '/bitrix/admin/'. $moduleID . '_smartseo_load.php?lang=' . urlencode(LANGUAGE_ID),
+					'url'   => '/bitrix/admin/'. $moduleID . '_components.php?lang=' . urlencode(LANGUAGE_ID),
 					'icon'  => 'imi_smartseo',
 				];
 			}
