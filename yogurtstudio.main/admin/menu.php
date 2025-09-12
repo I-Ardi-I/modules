@@ -12,7 +12,7 @@ function OnBuildGlobalMenuHandlerMax(&$arGlobalMenu, &$arModuleMenu)
 		IncludeModuleLangFile(__FILE__);
 		$moduleID = 'yogurtstudio.main';
 
-		$GLOBALS['APPLICATION']->SetAdditionalCss("/modules/" . $moduleID . "/css/style.css");
+		$GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/" . $moduleID . "/css/menu.css");
 
 		if ($GLOBALS['APPLICATION']->GetGroupRight($moduleID) >= 'R') {
 			$arMenu = [
