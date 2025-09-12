@@ -26,13 +26,48 @@ class yogurtstudio_main extends \CModule
 		$this->PARTNER_URI         = 'https://yogurtstudio.ru';
 	}
 
+
+	function InstallFiles(){
+		CopyDirFiles(__DIR__.'/admin/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/admin/'.static::partnerName.'/'.static::solutionName, true);
+		CopyDirFiles(__DIR__.'/components/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/components', true, true);
+		CopyDirFiles(__DIR__.'/tools/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/tools/'.static::partnerName.'/'.static::solutionName, true, true);
+
+		CopyDirFiles(__DIR__.'/css/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/css/'.static::partnerName.'/'.static::solutionName, true, true);
+		CopyDirFiles(__DIR__.'/js/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/js/'.static::partnerName.'/'.static::solutionName, true, true);
+		CopyDirFiles(__DIR__.'/images/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/images/'.static::partnerName.'/'.static::solutionName, true, true);
+
+		return true;
+	}
+
+	function UnInstallFiles(){
+		DeleteDirFilesEx(BX_ROOT.'/admin/'.static::partnerName.'/'.static::solutionName.'/');
+		DeleteDirFilesEx(BX_ROOT.'/css/'.static::partnerName.'/'.static::solutionName.'/');
+		DeleteDirFilesEx(BX_ROOT.'/js/'.static::partnerName.'/'.static::solutionName.'/');
+		DeleteDirFilesEx(BX_ROOT.'/images/'.static::partnerName.'/'.static::solutionName.'/');
+		DeleteDirFilesEx(BX_ROOT.'/tools/'.static::partnerName.'/'.static::solutionName.'/');
+
+		$this->UnInstallComponents();
+
+		return true;
+	}
+
+	function UnInstallComponents() {
+		DeleteDirFilesEx(BX_ROOT.'/components/'.static::partnerName.'/marketing.popup/');
+
+		return true;
+	}
+
 	public function doInstall()
 	{
 		ModuleManager::registerModule($this->MODULE_ID);
+
+		$this->InstallFiles();
 	}
 
 	public function doUninstall()
 	{
 		ModuleManager::unRegisterModule($this->MODULE_ID);
+
+		$this->UnInstallFiles();
 	}
 }
