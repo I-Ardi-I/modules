@@ -32,14 +32,14 @@ class yogurtstudio_main extends \CModule
 
 
 	function InstallFiles(){
-		CopyDirFiles(__DIR__.'/admin/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/admin/'.static::partnerName, true);
+		CopyDirFiles(__DIR__.'/admin/', $_SERVER['DOCUMENT_ROOT'].'/bitrix/admin', true);
 		CopyDirFiles(__DIR__.'/routes/', $_SERVER['DOCUMENT_ROOT']. '/local/' . '/routes/', true);
 
 		return true;
 	}
 
 	function UnInstallFiles(){
-		DeleteDirFilesEx(BX_ROOT.'/admin/'.static::partnerName.'/');
+		DeleteDirFiles(__DIR__.'/admin/', $_SERVER['DOCUMENT_ROOT'].'/bitrix/admin');
 		DeleteDirFilesEx($_SERVER['DOCUMENT_ROOT']. '/local/' . '/routes/');
 
 		return true;
