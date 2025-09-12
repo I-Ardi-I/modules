@@ -9,3 +9,6 @@ require $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_admin_aft
 
 global $APPLICATION;
 IncludeModuleLangFile(__FILE__);
+
+
+echo 'hello world';

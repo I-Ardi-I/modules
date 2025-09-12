@@ -7,6 +7,10 @@ Loc::loadMessages(__FILE__);
 
 class yogurtstudio_main extends \CModule
 {
+
+	const solutionName	= 'main';
+	const partnerName = 'yogurtstudio';
+
 	public function __construct()
 	{
 		$arModuleVersion = [];
@@ -28,34 +32,19 @@ class yogurtstudio_main extends \CModule
 
 
 	function InstallFiles(){
-		CopyDirFiles(__DIR__.'/admin/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/admin/'.static::partnerName.'/'.static::solutionName, true);
-		CopyDirFiles(__DIR__.'/components/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/components', true, true);
-		CopyDirFiles(__DIR__.'/tools/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/tools/'.static::partnerName.'/'.static::solutionName, true, true);
-
-		CopyDirFiles(__DIR__.'/css/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/css/'.static::partnerName.'/'.static::solutionName, true, true);
-		CopyDirFiles(__DIR__.'/js/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/js/'.static::partnerName.'/'.static::solutionName, true, true);
-		CopyDirFiles(__DIR__.'/images/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/images/'.static::partnerName.'/'.static::solutionName, true, true);
+		CopyDirFiles(__DIR__.'/admin/', $_SERVER['DOCUMENT_ROOT'].BX_ROOT.'/admin/'.static::partnerName, true);
+		CopyDirFiles(__DIR__.'/routes/', $_SERVER['DOCUMENT_ROOT']. '/local/' . '/routes/', true);
 
 		return true;
 	}
 
 	function UnInstallFiles(){
-		DeleteDirFilesEx(BX_ROOT.'/admin/'.static::partnerName.'/'.static::solutionName.'/');
-		DeleteDirFilesEx(BX_ROOT.'/css/'.static::partnerName.'/'.static::solutionName.'/');
-		DeleteDirFilesEx(BX_ROOT.'/js/'.static::partnerName.'/'.static::solutionName.'/');
-		DeleteDirFilesEx(BX_ROOT.'/images/'.static::partnerName.'/'.static::solutionName.'/');
-		DeleteDirFilesEx(BX_ROOT.'/tools/'.static::partnerName.'/'.static::solutionName.'/');
-
-		$this->UnInstallComponents();
+		DeleteDirFilesEx(BX_ROOT.'/admin/'.static::partnerName.'/');
+		DeleteDirFilesEx($_SERVER['DOCUMENT_ROOT']. '/local/' . '/routes/');
 
 		return true;
 	}
 
-	function UnInstallComponents() {
-		DeleteDirFilesEx(BX_ROOT.'/components/'.static::partnerName.'/marketing.popup/');
-
-		return true;
-	}
 
 	public function doInstall()
 	{
