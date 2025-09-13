@@ -13,178 +13,259 @@ IncludeModuleLangFile(__FILE__);
 $GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/yogurtstudio.main/css/style.css");
 ?>
 
-<div class="block_general_setting">
-	<h2 class="title">Основные настройки</h2>
-	<div class="block_contacts container">
-		<h2>Контактные данные
-			<h2>
-				<div class="block_phone block_item">
-					<p>Список телефонов</p>
-					<div class="block_input">
-						<div class="input_item">
-							<div class="label">
-								<p>Первый номер</p>
-							</div>
+<div class="main_container">
+	<header class="header">
+		<div class="logo header_logo">
+		</div>
+		<nav class="header_menu">
+			<ul class="menu_list">
+				<li class="menu_item">
+					<a href="#contacts"
+					   class="menu_link"
+					>
+						<span class="button_text">
+							Контакты
+						</span>
+					</a>
+				</li>
+				<li class="menu_item">
+					<a href="#setting"
+					   class="menu_link"
+					>
+						<span class="button_text">
+							Настройки
+						</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<form action=""
+	      class="main_form"
+	>
+		<main class="main_block">
+			<section class="contacts block" id="contacts">
+				<div class="contacts_title title">
+					<h3>
+						Контакты
+					</h3>
+				</div>
+				<div class="contacts_phones">
+					<div class="phones_title title--sub">
+						<h3>Список телефонов</h3>
+					</div>
+					<div class="phones_list">
+						<div class="phones_item">
 							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							       class="input input--default phone_input--number"
+							       placeholder="+7 (900) 000 00 00"
 							>
 							<input type="text"
+							       class="input input--default phone_input--link"
+							       placeholder="tel: +79000000000"
+							>
+							<input type="file"
+							       class="input input--default phone_input--icon input--icon"
+							       placeholder=""
+							>
+							<input type="text"
+							       class="input input--default phone_input--description"
 							       placeholder="Описание"
 							>
-							<div class="phone_description">
-								<input type="text"
-								       placeholder="Описание"
-								>
-							</div>
 						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Второй номер</p>
-							</div>
+						<div class="phones_item">
 							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							       class="input input--default phone_input--number"
+							       placeholder="+7 (900) 000 00 00"
 							>
 							<input type="text"
+							       class="input input--default phone_input--link"
+							       placeholder="tel: +79000000000"
+							>
+							<input type="file"
+							       class="input input--default phone_input--icon input--icon"
+							       placeholder=""
+							>
+							<input type="text"
+							       class="input input--default phone_input--description"
 							       placeholder="Описание"
 							>
-							<div class="phone_description">
-								<input type="text"
-								       placeholder="Описание"
-								>
-							</div>
 						</div>
 					</div>
 				</div>
-				<div class="block_phone block_item">
-					<p>Соц. сети</p>
-					<div class="block_input">
-						<div class="input_item">
-							<div class="label">
-								<p>ВКонтакте</p>
-							</div>
+				<div class="contacts_social">
+					<div class="social_title title--sub">
+						<h3>Соц. сети</h3>
+					</div>
+					<div class="social_list">
+						<div class="social_item">
 							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							       class="input input--default social_input--name"
+							       placeholder="ВКонтаке"
+							>
+							<input type="file"
+							       class="input social_input--icon input--icon"
+							       placeholder=""
+							>
+							<input type="text"
+							       class="input input--default social_input--link"
+							       placeholder="https//:vk.ru"
 							>
 						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Телеграмм</p>
-							</div>
+						<div class="social_item">
 							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							       class="input input--default social_input--name"
+							       placeholder="ВКонтаке"
+							>
+							<input type="file"
+							       class="input social_input--icon input--icon"
+							       placeholder=""
+							>
+							<input type="text"
+							       class="input input--default social_input--link"
+							       placeholder="https//:vk.ru"
 							>
 						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Телеграмм</p>
-							</div>
+						<div class="social_item">
 							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							       class="input input--default social_input--name"
+							       placeholder="ВКонтаке"
+							>
+							<input type="file"
+							       class="input social_input--icon input--icon"
+							       placeholder=""
+							>
+							<input type="text"
+							       class="input input--default social_input--link"
+							       placeholder="https//:vk.ru"
 							>
 						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Телеграмм</p>
-							</div>
+						<div class="social_item">
 							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							       class="input input--default social_input--name"
+							       placeholder="ВКонтаке"
+							>
+							<input type="file"
+							       class="input social_input--icon input--icon"
+							       placeholder=""
+							>
+							<input type="text"
+							       class="input input--default social_input--link"
+							       placeholder="https//:vk.ru"
 							>
 						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Телеграмм</p>
-							</div>
+						<div class="social_item">
 							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							       class="input input--default social_input--name"
+							       placeholder="ВКонтаке"
+							>
+							<input type="file"
+							       class="input social_input--icon input--icon"
+							       placeholder=""
+							>
+							<input type="text"
+							       class="input input--default social_input--link"
+							       placeholder="https//:vk.ru"
 							>
 						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Телеграмм</p>
-							</div>
+						<div class="social_item">
 							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							       class="input input--default social_input--name"
+							       placeholder="ВКонтаке"
 							>
-						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Телеграмм</p>
-							</div>
-							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							<input type="file"
+							       class="input social_input--icon input--icon"
+							       placeholder=""
 							>
-						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Телеграмм</p>
-							</div>
 							<input type="text"
-							       placeholder="+7 000 000 00 00"
+							       class="input input--default social_input--link"
+							       placeholder="https//:vk.ru"
 							>
 						</div>
 					</div>
 				</div>
-	</div>
-	<div class="block_personalization container">
-		<h2>Настройки сайта
-			<h2>
-				<div class="block_phone block_item">
-					<p>Логотип</p>
-					<div class="block_input">
-						<div class="input_item">
-							<div class="label">
-								<p>Первый Логотип</p>
-							</div>
-							<input type="file">
+			</section>
+			<section class="setting block" id="setting">
+				<div class="setting_title title">
+					<h3>
+						Настройки
+					</h3>
+				</div>
+				<div class="setting_list">
+					<div class="setting_item--medium">
+						<div class="setting_label">
+							<label for="">Название</label>
 						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Второй Логотип</p>
-							</div>
-							<input type="file">
+						<input type="text"
+						       class="input input--default setting_input--medium"
+						       placeholder="YogurtStudio"
+						>
+					</div>
+					<div class="setting_item--medium">
+						<div class="setting_label">
+							<label for="">Адрес</label>
 						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Фавикон</p>
+						<input type="text"
+						       class="input input--default setting_input--medium"
+						       placeholder="г. Калининград"
+						>
+					</div>
+					<div class="setting_item--medium">
+						<div class="setting_label">
+							<label for="">Карта</label>
+						</div>
+						<input type="text"
+						       class="input input--default setting_input--medium"
+						       placeholder="https//:maps"
+						>
+					</div>
+					<div class="setting_item--big">
+						<div class="setting_label">
+							<label for="">Логотип</label>
+						</div>
+						<input type="file"
+						       class="input setting_input--big"
+						       placeholder=""
+						>
+					</div>
+					<div class="setting_item--big">
+						<div class="setting_label">
+							<label for="">Favicon</label>
+						</div>
+						<input type="file"
+						       class="input setting_input--big"
+						       placeholder=""
+						>
+					</div>
+					<div class="list_item--block">
+						<div class="setting_item--long">
+							<div class="setting_label">
+								<label for="">График</label>
 							</div>
-							<input type="file">
+							<input type="text"
+							       class="input input--default setting_input--long"
+							       placeholder="Пн-Пт 7:00 - 18:00"
+							>
+						</div>
+						<div class="setting_item--long">
+							<div class="setting_label">
+								<label for="">Политика конфидициальности</label>
+							</div>
+							<input type="text"
+							       class="input input--default setting_input--long"
+							       placeholder="https//:policy/"
+							>
 						</div>
 					</div>
 				</div>
-				<div class="block_phone block_item">
-					<p>Данные</p>
-					<div class="block_input">
-						<div class="input_item">
-							<div class="label">
-								<p>Адрес</p>
-							</div>
-							<input type="text">
-							<div class="label">
-								<p>Карта</p>
-							</div>
-							<input type="text">
-						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Юридический адрес</p>
-							</div>
-							<input type="text">
-							<div class="label">
-								<p>Политика конфиденциальности</p>
-							</div>
-							<input type="file">
-						</div>
-						<div class="input_item">
-							<div class="label">
-								<p>Описание</p>
-							</div>
-							<textarea name=""
-							          id=""
-							          cols="30"
-							          rows="10"
-							></textarea>
-						</div>
-					</div>
-				</div>
-	</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<button class="footer_button--red">
+					<span class="button_text">
+						Применить
+					</span>
+			</button>
+		</footer>
+	</form>
 </div>
