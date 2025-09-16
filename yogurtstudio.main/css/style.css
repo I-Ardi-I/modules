@@ -86,20 +86,9 @@ a{
     width: 550px;
 }
 .input--default{
+    width: 100%;
     font-size: 20px !important;
     height: 45px !important;
-}
-.phone_input--number{
-    width: 235px;
-}
-.phone_input--link{
-    width: 235px;
-}
-.input--icon{
-    width: 45px;
-}
-.phone_input--description{
-    width: 435px;
 }
 .social_list{
     grid-row-gap: 20px;
@@ -110,12 +99,6 @@ a{
     display: flex;
     flex-wrap: wrap;
     margin-right: 20px;
-}
-.social_input--name{
-    width: 260px;
-}
-.social_input--link{
-    width: 100%;
 }
 .setting_list{
     display: flex;
@@ -143,19 +126,7 @@ a{
 .setting_item--long{
     margin: 20px 20px 20px 0 !important;
 }
-.setting_input--long{
-    width: 100%;
-}
 .list_item--block{
     width: 610px;
     display: block;
-}
-.footer_button--red{
-    background-color: rgba(220, 33, 33, 1) ;
-    border: none;
-    border-radius: 2px;
-    color: white;
-    height: 40px;
-    width: 200px;
-    margin: 20px 85px 0 0;
 }

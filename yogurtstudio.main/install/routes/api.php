@@ -10,6 +10,7 @@ use YogurtStudio\Main\Http\FormController;
 use YogurtStudio\Main\Http\BasketController;
 use YogurtStudio\Main\Http\UserController;
 use YogurtStudio\Main\Http\FilterController;
+use YogurtStudio\Main\General\FormOptions;
 
 return static function (RoutingConfigurator $routes) {
 	$checkModule = static function () {
@@ -40,6 +41,32 @@ return static function (RoutingConfigurator $routes) {
 
 		$formHelper = new FormController();
 		$result     = $formHelper->sendForm($requestArr["formId"], $arFields);
+
+		header('Content-Type: application/json; charset=utf-8');
+
+		return json_encode($result, JSON_UNESCAPED_UNICODE);
+	};
+
+	$formSaveOptions = function (HttpRequest $request) use ($checkModule) {
+		if ($error = $checkModule()) {
+			return $error;
+		}
+
+		$requestArr = $request->getPostList()->toArray();
+
+		$arFields = [];
+		foreach ($requestArr as $key => $arField) {
+			if ($key !== 'formId') {
+				if (str_contains($key, 'form_file')) {
+					$arFields[$key] = $request->getFile($arField);
+				} else {
+					$arFields[$key] = $arField;
+				}
+			}
+		}
+
+		$formHelper = new FormOptions();
+		$result     = $formHelper->saveAction($arFields);
 
 		header('Content-Type: application/json; charset=utf-8');
 
@@ -280,6 +307,7 @@ return static function (RoutingConfigurator $routes) {
 	$routes->post('/api/user/change-info/', $userChangeInfo);
 	// Формы
 	$routes->post('/api/form/save/', $formSave);
+	$routes->post('/api/formOption/save/', $formSaveOptions);
 	// Число товаров
 	$routes->post('/api/filter/quantity/', $productQuantity);
 	// Корзина

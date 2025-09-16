@@ -11,6 +11,7 @@ global $APPLICATION;
 IncludeModuleLangFile(__FILE__);
 
 $GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/yogurtstudio.main/css/style.css");
+$GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/script.js");
 ?>
 
 <div class="main_container">
@@ -42,6 +43,7 @@ $GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/yogurtstudio.main/css/
 	</header>
 	<form action=""
 	      class="main_form"
+	      id="formOptions"
 	>
 		<main class="main_block">
 			<section class="contacts block" id="contacts">
@@ -59,36 +61,24 @@ $GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/yogurtstudio.main/css/
 							<input type="text"
 							       class="input input--default phone_input--number"
 							       placeholder="+7 (900) 000 00 00"
-							>
-							<input type="text"
-							       class="input input--default phone_input--link"
-							       placeholder="tel: +79000000000"
-							>
-							<input type="file"
-							       class="input input--default phone_input--icon input--icon"
-							       placeholder=""
+							       name="phoneValue"
 							>
 							<input type="text"
 							       class="input input--default phone_input--description"
 							       placeholder="Описание"
+							       name="phoneDescription"
 							>
 						</div>
 						<div class="phones_item">
 							<input type="text"
 							       class="input input--default phone_input--number"
 							       placeholder="+7 (900) 000 00 00"
-							>
-							<input type="text"
-							       class="input input--default phone_input--link"
-							       placeholder="tel: +79000000000"
-							>
-							<input type="file"
-							       class="input input--default phone_input--icon input--icon"
-							       placeholder=""
+							       name="phoneValue"
 							>
 							<input type="text"
 							       class="input input--default phone_input--description"
 							       placeholder="Описание"
+							       name="phoneDescription"
 							>
 						</div>
 					</div>
@@ -102,84 +92,72 @@ $GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/yogurtstudio.main/css/
 							<input type="text"
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
-							>
-							<input type="file"
-							       class="input social_input--icon input--icon"
-							       placeholder=""
+							       name="nameSocial"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
+							       name="linkSocial"
 							>
 						</div>
 						<div class="social_item">
 							<input type="text"
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
-							>
-							<input type="file"
-							       class="input social_input--icon input--icon"
-							       placeholder=""
+							       name="nameSocial"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
+							       name="linkSocial"
 							>
 						</div>
 						<div class="social_item">
 							<input type="text"
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
-							>
-							<input type="file"
-							       class="input social_input--icon input--icon"
-							       placeholder=""
+							       name="nameSocial"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
+							       name="linkSocial"
 							>
 						</div>
 						<div class="social_item">
 							<input type="text"
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
-							>
-							<input type="file"
-							       class="input social_input--icon input--icon"
-							       placeholder=""
+							       name="nameSocial"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
+							       name="linkSocial"
 							>
 						</div>
 						<div class="social_item">
 							<input type="text"
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
-							>
-							<input type="file"
-							       class="input social_input--icon input--icon"
-							       placeholder=""
+							       name="nameSocial"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
+							       name="linkSocial"
 							>
 						</div>
 						<div class="social_item">
 							<input type="text"
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
-							>
-							<input type="file"
-							       class="input social_input--icon input--icon"
-							       placeholder=""
+							       name="nameSocial"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
+							       name="linkSocial"
 							>
 						</div>
 					</div>
@@ -194,20 +172,12 @@ $GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/yogurtstudio.main/css/
 				<div class="setting_list">
 					<div class="setting_item--medium">
 						<div class="setting_label">
-							<label for="">Название</label>
-						</div>
-						<input type="text"
-						       class="input input--default setting_input--medium"
-						       placeholder="YogurtStudio"
-						>
-					</div>
-					<div class="setting_item--medium">
-						<div class="setting_label">
 							<label for="">Адрес</label>
 						</div>
 						<input type="text"
 						       class="input input--default setting_input--medium"
 						       placeholder="г. Калининград"
+						       name="address"
 						>
 					</div>
 					<div class="setting_item--medium">
@@ -217,11 +187,22 @@ $GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/yogurtstudio.main/css/
 						<input type="text"
 						       class="input input--default setting_input--medium"
 						       placeholder="https//:maps"
+						       name="linkMap"
+						>
+					</div>
+					<div class="setting_item--medium">
+						<div class="setting_label">
+							<label for="">График</label>
+						</div>
+						<input type="text"
+						       class="input input--default setting_input--medium"
+						       placeholder="Пн-Пт 7:00 - 18:00"
+						       name="workTime"
 						>
 					</div>
 					<div class="setting_item--big">
 						<div class="setting_label">
-							<label for="">Логотип</label>
+							<label for="">Логотип Светлый</label>
 						</div>
 						<input type="file"
 						       class="input setting_input--big"
@@ -230,42 +211,15 @@ $GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/yogurtstudio.main/css/
 					</div>
 					<div class="setting_item--big">
 						<div class="setting_label">
-							<label for="">Favicon</label>
+							<label for="">Логотип темный</label>
 						</div>
 						<input type="file"
 						       class="input setting_input--big"
 						       placeholder=""
 						>
-					</div>
-					<div class="list_item--block">
-						<div class="setting_item--long">
-							<div class="setting_label">
-								<label for="">График</label>
-							</div>
-							<input type="text"
-							       class="input input--default setting_input--long"
-							       placeholder="Пн-Пт 7:00 - 18:00"
-							>
-						</div>
-						<div class="setting_item--long">
-							<div class="setting_label">
-								<label for="">Политика конфидициальности</label>
-							</div>
-							<input type="text"
-							       class="input input--default setting_input--long"
-							       placeholder="https//:policy/"
-							>
-						</div>
 					</div>
 				</div>
 			</section>
 		</main>
-		<footer class="footer">
-			<button class="footer_button--red">
-					<span class="button_text">
-						Применить
-					</span>
-			</button>
-		</footer>
 	</form>
 </div>
