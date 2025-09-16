@@ -12,8 +12,15 @@ IncludeModuleLangFile(__FILE__);
 
 $GLOBALS['APPLICATION']->SetAdditionalCss("/local/modules/yogurtstudio.main/css/style.css");
 $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/script.js");
-?>
 
+if (!\Bitrix\Main\Loader::includeModule('yogurtstudio.main')) {
+	$result = 'модуль не подключен';
+}
+
+$formOption = new YogurtStudio\Main\General\FormOptions();
+
+$content = $formOption->getFieldOptions();
+?>
 <div class="main_container">
 	<header class="header">
 		<div class="logo header_logo">
@@ -58,27 +65,33 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 					</div>
 					<div class="phones_list">
 						<div class="phones_item">
-							<input type="text"
+							<input type="tel"
 							       class="input input--default phone_input--number"
 							       placeholder="+7 (900) 000 00 00"
 							       name="phoneValue"
+							       value="<?= $content['phones'][0]['value'] ?>"
+							       maxlength="18"
 							>
 							<input type="text"
 							       class="input input--default phone_input--description"
 							       placeholder="Описание"
 							       name="phoneDescription"
+							       value="<?= $content['phones'][0]['description'] ?>"
 							>
 						</div>
 						<div class="phones_item">
-							<input type="text"
+							<input type="tel"
 							       class="input input--default phone_input--number"
 							       placeholder="+7 (900) 000 00 00"
 							       name="phoneValue"
+							       value="<?= $content['phones'][1]['value'] ?>"
+							       maxlength="18"
 							>
 							<input type="text"
 							       class="input input--default phone_input--description"
 							       placeholder="Описание"
 							       name="phoneDescription"
+							       value="<?= $content['phones'][1]['description'] ?>"
 							>
 						</div>
 					</div>
@@ -93,11 +106,13 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
 							       name="nameSocial"
+							       value="<?= $content['socials'][0]['name'] ?>"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
 							       name="linkSocial"
+							       value="<?= $content['socials'][0]['link'] ?>"
 							>
 						</div>
 						<div class="social_item">
@@ -105,11 +120,13 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
 							       name="nameSocial"
+							       value="<?= $content['socials'][1]['name'] ?>"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
 							       name="linkSocial"
+							       value="<?= $content['socials'][1]['link'] ?>"
 							>
 						</div>
 						<div class="social_item">
@@ -117,11 +134,13 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
 							       name="nameSocial"
+							       value="<?= $content['socials'][2]['name'] ?>"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
 							       name="linkSocial"
+							       value="<?= $content['socials'][2]['link'] ?>"
 							>
 						</div>
 						<div class="social_item">
@@ -129,11 +148,13 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
 							       name="nameSocial"
+							       value="<?= $content['socials'][3]['name'] ?>"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
 							       name="linkSocial"
+							       value="<?= $content['socials'][3]['link'] ?>"
 							>
 						</div>
 						<div class="social_item">
@@ -141,11 +162,13 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
 							       name="nameSocial"
+							       value="<?= $content['socials'][4]['name'] ?>"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
 							       name="linkSocial"
+							       value="<?= $content['socials'][4]['link'] ?>"
 							>
 						</div>
 						<div class="social_item">
@@ -153,11 +176,13 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 							       class="input input--default social_input--name"
 							       placeholder="ВКонтаке"
 							       name="nameSocial"
+							       value="<?= $content['socials'][5]['name'] ?>"
 							>
 							<input type="text"
 							       class="input input--default social_input--link"
 							       placeholder="https//:vk.ru"
 							       name="linkSocial"
+							       value="<?= $content['socials'][5]['link'] ?>"
 							>
 						</div>
 					</div>
@@ -178,6 +203,7 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 						       class="input input--default setting_input--medium"
 						       placeholder="г. Калининград"
 						       name="address"
+						       value="<?= $content['settings']['address'] ?>"
 						>
 					</div>
 					<div class="setting_item--medium">
@@ -188,6 +214,7 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 						       class="input input--default setting_input--medium"
 						       placeholder="https//:maps"
 						       name="linkMap"
+						       value="<?= $content['settings']['linkMap'] ?>"
 						>
 					</div>
 					<div class="setting_item--medium">
@@ -198,6 +225,7 @@ $GLOBALS['APPLICATION']->AddHeadScript("/local/modules/yogurtstudio.main/js/scri
 						       class="input input--default setting_input--medium"
 						       placeholder="Пн-Пт 7:00 - 18:00"
 						       name="workTime"
+						       value="<?= $content['settings']['workTime'] ?>"
 						>
 					</div>
 					<div class="setting_item--big">

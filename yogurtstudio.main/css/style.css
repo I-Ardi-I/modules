@@ -130,3 +130,6 @@ a{
     width: 610px;
     display: block;
 }
+input:valid{
+    color: white !important;
+}

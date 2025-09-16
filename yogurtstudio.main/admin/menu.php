@@ -44,7 +44,8 @@ function OnBuildGlobalMenuHandlerMax(&$arGlobalMenu, &$arModuleMenu)
 				],
 			];
 
-			if (!\CModule::IncludeModule('aspro.smartseo')) {
+
+			if (\CModule::IncludeModule('yogurtstudio.components')) {
 				$arMenu['items'][] = [
 					'text'  => Loc::getMessage('YS_SUB_MENU_THREE'),
 					'title' => Loc::getMessage('YS_SUB_MENU_THREE'),

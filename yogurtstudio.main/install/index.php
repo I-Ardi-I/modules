@@ -2,7 +2,6 @@
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
-use YogurtStudio\Main\General\CreateDBTable;
 use Bitrix\Main\Application;
 use Bitrix\Main\Localization\Loc;
 use Bitrix\Main\Config\Option;

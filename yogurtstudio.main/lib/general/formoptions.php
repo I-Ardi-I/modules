@@ -13,4 +13,12 @@ class FormOptions
 		        "message" => "Форма успешно сохранена",
 		];
 	}
+
+	public function getFieldOptions()
+	: array
+	{
+		$json = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/upload/form_options.json");
+
+		return json_decode($json, true);
+	}
 }

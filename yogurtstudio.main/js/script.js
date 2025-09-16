@@ -51,4 +51,57 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch(err => console.error("Ошибка автосохранения:", err));
     }
+
+    function validatePhone(phone) {
+        // Убираем все пробелы, скобки и дефисы для проверки
+        const digitsOnly = phone.replace(/\D/g, '');
+        // Должно быть 11 цифр и начинаться с 7
+        return digitsOnly.length === 11 && digitsOnly.startsWith('7');
+    }
+
+    function validateSocialLink(link) {
+        const urlRegex = /^(https?:\/\/).+/;
+        return urlRegex.test(link.trim());
+    }
+
+    function removeError(input) {
+        const next = input.nextElementSibling;
+        if (next && next.classList.contains('error-message')) {
+            next.remove();
+        }
+    }
+
+    function showError(input, message) {
+        removeError(input);
+        const span = document.createElement('span');
+        span.className = 'error-message';
+        span.style.color = 'red';
+        span.style.fontSize = '12px';
+        span.textContent = message;
+        input.insertAdjacentElement('afterend', span);
+    }
+
+    // Телефоны
+    const phoneInputs = document.querySelectorAll('.phone_input--number');
+    phoneInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (!validatePhone(input.value)) {
+                showError(input, 'Неверный формат телефона');
+            } else {
+                removeError(input);
+            }
+        });
+    });
+
+    // Ссылки соцсетей
+    const socialLinks = document.querySelectorAll('.social_input--link');
+    socialLinks.forEach(input => {
+        input.addEventListener('input', function() {
+            if (!validateSocialLink(input.value)) {
+                showError(input, 'Неверная ссылка');
+            } else {
+                removeError(input);
+            }
+        });
+    });
 });
