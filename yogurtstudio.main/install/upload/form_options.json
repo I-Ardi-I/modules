@@ -1,0 +1,35 @@
+{
+    "phones": [
+        {
+            "value": "",
+            "description": ""
+        },
+        {
+            "value": "",
+            "description": ""
+        }
+    ],
+    "socials": [
+        {
+            "name": "",
+            "link": ""
+        },
+        {
+            "name": "",
+            "link": ""
+        },
+        {
+            "name": "",
+            "link": ""
+        },
+        {
+            "name": "",
+            "link": ""
+        }
+    ],
+    "settings": {
+        "address": "",
+        "linkMap": "",
+        "workTime": ""
+    }
+}
