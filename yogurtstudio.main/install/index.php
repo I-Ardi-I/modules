@@ -1,12 +1,19 @@
 <?php
 
-use Bitrix\Main\Localization\Loc;
+use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
+use Bitrix\Main\Application;
+use Bitrix\Main\Localization\Loc;
+use Bitrix\Main\Config\Option;
 
 Loc::loadMessages(__FILE__);
 
 class yogurtstudio_main extends \CModule
 {
+
+	const solutionName	= 'main';
+	const partnerName = 'yogurtstudio';
+
 	public function __construct()
 	{
 		$arModuleVersion = [];
@@ -26,8 +33,6 @@ class yogurtstudio_main extends \CModule
 		$this->PARTNER_URI         = 'https://yogurtstudio.ru';
 	}
 
-<<<<<<< Updated upstream
-=======
 	/**
 	 * Универсальная функция замены или удаления блока роутинга в .htaccess
 	 *
@@ -83,14 +88,39 @@ class yogurtstudio_main extends \CModule
 	}
 
 
->>>>>>> Stashed changes
 	public function doInstall()
 	{
 		ModuleManager::registerModule($this->MODULE_ID);
+
+		$this->InstallFiles();
+
+		$htaccessPath = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
+
+		$patternInstall = '/RewriteCond\s+\%\{REQUEST_FILENAME\}\s+!\/bitrix\/urlrewrite\.php\$\s*RewriteRule\s+\^\(\.\*\)\$\s+\/bitrix\/urlrewrite\.php\s+\[L\]/m';
+
+		$replacementInstall = "RewriteCond %{REQUEST_FILENAME} !/bitrix/routing_index.php$\nRewriteRule ^(.*)$ /bitrix/routing_index.php [L]";
+
+		$this->updateHtaccessBlock($htaccessPath, $patternInstall, $replacementInstall);
+
+
 	}
 
 	public function doUninstall()
 	{
+
+		$this->UnInstallFiles();
+
+		$htaccessPath = $_SERVER['DOCUMENT_ROOT'].'/.htaccess';
+
+		$patternUninstall = '/RewriteCond\s+\%\{REQUEST_FILENAME\}\s+!\/bitrix\/routing_index\.php\$\s*RewriteRule\s+\^\(\.\*\)\$\s+\/bitrix\/routing_index\.php\s+\[L\]/m';
+
+		$replacementUninstall = "RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$\nRewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]";
+
+		$this->updateHtaccessBlock($htaccessPath, $patternUninstall, $replacementUninstall);
+
+
+
 		ModuleManager::unRegisterModule($this->MODULE_ID);
+
 	}
 }

@@ -1,0 +1,14 @@
+#global_menu_global_menu_ys .adm-main-menu-item-icon {
+	height: 40px;
+	background: rgba(0, 0, 0, 0) url("../images/global_menu.png") no-repeat;
+	background-size: cover;
+	opacity: 1;
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
+.adm-submenu-item-name-link .imi_max{
+	height: 17px;
+	width: 17px;
+	background:rgba(0, 0, 0, 0) url("../images/global_menu.png") no-repeat;
+	background-size: cover;
+}

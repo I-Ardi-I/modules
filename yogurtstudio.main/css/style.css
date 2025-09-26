@@ -1,0 +1,135 @@
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+.block{
+    width: 1100px;
+}
+.main_container{
+    width: 98%;
+    overflow-x: hidden;
+    background-color: rgba(27, 27, 27, 1) ;
+    color: white;
+}
+.header{
+    display: flex;
+    background-color: rgba(35, 35, 35, 1) ;
+    height: 70px;
+    width: 100%;
+}
+.footer{
+    background-color: rgba(35, 35, 35, 1) ;
+    height: 80px;
+    width: 100%;
+    text-align: right;
+}
+.logo{
+    height: 100%;
+    width: 320px;
+    background: rgba(0, 0, 0, 0) url("../images/logo_ys.png") no-repeat;
+}
+.header_logo{
+    margin: 20px 0 0 70px;
+}
+.header_menu{
+    width: 100%;
+    height: 100%;
+}
+.menu_list{
+    display: flex;
+}
+.menu_item{
+    margin: 7px 10%;
+    list-style-type: none;    
+}
+.menu_link{
+    color: white;
+}
+.button_text{
+    font-size: 25px;
+    font-weight:700;
+}
+.main_block{
+    margin: 0 60px;
+}
+.title{
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+}
+.contacts_phones{
+    margin-bottom: 50px;
+}
+.title--sub{
+    font-size: 20px;
+}
+.input{
+    border: 1px rgba(129, 129, 129, 1) solid !important;
+    background-color: rgba(20, 20, 20, 1) !important;
+    color: rgba(255, 255, 255, 0.27) !important;
+    margin: 15px 10px 0 0 !important;
+    border-radius: 0 !important;
+}
+.input:active{
+    color: white;
+}
+.phones_list{
+    display: flex;
+
+}
+.phones_item{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px 0 0;
+    width: 550px;
+}
+.input--default{
+    width: 100%;
+    font-size: 20px !important;
+    height: 45px !important;
+}
+.social_list{
+    grid-row-gap: 20px;
+    display: grid;
+    grid-template-columns: 360px 360px 360px;
+}
+.social_item{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 20px;
+}
+.setting_list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1100px;
+}
+.setting_item--medium{
+    margin-right: 15px;
+}
+.setting_input--medium{
+    width: 325px;
+    
+}
+.setting_label{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.27) ;
+}
+.setting_item--big{
+    margin: 20px 20px 20px 0 ;
+}
+.setting_input--big{
+    width: 200px !important;
+    height: 200px !important;
+}
+.setting_item--long{
+    margin: 20px 20px 20px 0 !important;
+}
+.list_item--block{
+    width: 610px;
+    display: block;
+}
+input:valid{
+    color: white !important;
+}
